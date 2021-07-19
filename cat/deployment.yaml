@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: cat
-        image: cat
+        image: tho861998/cat
         ports:
         - containerPort: 8080
