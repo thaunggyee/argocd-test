@@ -2,8 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cat
-  labels:
-    app: cat
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -17,7 +15,6 @@ spec:
   project: default
   syncPolicy:
     automated:
-      prune: true
+      prune: false
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+  
