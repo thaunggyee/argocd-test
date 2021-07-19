@@ -1,11 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cat-gif
+  name: cat
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
+    namespace: argocd
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
@@ -16,3 +17,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
