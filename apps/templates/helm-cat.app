@@ -8,7 +8,7 @@ spec:
     namespace: {{ $targetNamespace }}
     server: "{{ .Values.spec.destination.server }}"
   source:
-    path: helm-cat
+    path: helm-nginx
     repoURL: "{{ .Values.spec.source.repoURL }}"
     targetRevision: "{{ .Values.spec.source.targetRevision }}"
     helm:
